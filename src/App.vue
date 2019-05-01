@@ -1,17 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <Header />
     <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+
+let BITBOXSDK = require('bitbox-sdk');
+let BITBOX = new BITBOXSDK();
+
+(async () => {
+  try {
+    let details = await BITBOX.Address.details(['1MkzBVjGHiukcmht24EvArwrP6v2sviBnj']);
+    console.log(details)
+  } catch(error) {
+   console.error(error)
+  }
+})()
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Header
   },
   data() {
     return {
@@ -28,6 +40,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
