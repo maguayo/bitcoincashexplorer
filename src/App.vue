@@ -1,12 +1,18 @@
 <template>
   <div id="app">
     <Header />
-    <h1>{{ msg }}</h1>
+    <div class="container">
+      <Block />
+      <Block />
+      <Block />
+      <Block />
+    </div>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import Block from './components/Block.vue'
 
 let BITBOXSDK = require('bitbox-sdk');
 let BITBOX = new BITBOXSDK();
@@ -23,7 +29,8 @@ let BITBOX = new BITBOXSDK();
 export default {
   name: 'app',
   components: {
-    Header
+    Header,
+    Block
   },
   data() {
     return {
