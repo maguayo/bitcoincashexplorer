@@ -35,6 +35,7 @@
 <script>
 import Header from '../components/Header.vue'
 
+const pretty = require('prettysize');
 let BITBOXSDK = require('bitbox-sdk');
 let BITBOX = new BITBOXSDK();
 
@@ -61,6 +62,7 @@ export default {
     getMempoolInfo: function() {
       BITBOX.Blockchain.getMempoolInfo().then(mempoolInfo => {
         this.mempoolInfo = mempoolInfo;
+        this.mempoolInfo.bytes = pretty(this.mempoolInfo.bytes)
       });
     }
   },
