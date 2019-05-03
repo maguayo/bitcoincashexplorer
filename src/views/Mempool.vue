@@ -1,8 +1,15 @@
 <template>
     <div id="app">
         <Header />
-        <div class="mempool">
-            <h1>This is the mempool page</h1>
+        <div class="container">
+            <h4 class="text-left">Mempool transactions: </h4>
+            <table class="table table-striped table-bordered">
+              <tbody>
+                <tr v-for="tx in mempool" :key="tx">
+                  <td>{{ tx }}</td>
+                </tr>
+              </tbody>
+            </table>
         </div>
     </div>
 </template>
@@ -13,26 +20,30 @@ import Header from '../components/Header.vue'
 let BITBOXSDK = require('bitbox-sdk');
 let BITBOX = new BITBOXSDK();
 
-(async () => {
-  try {
-    let details = await BITBOX.Address.details(['1MkzBVjGHiukcmht24EvArwrP6v2sviBnj']);
-    console.log(details)
-  } catch(error) {
-   console.error(error)
-  }
-})()
+let mempool = [];
 
 export default {
   name: 'Mempool',
   components: {
     Header,
   },
-  data() {
+  data: function () {
     return {
-      msg: "Hello World"
+      mempool: mempool
     }
+  },
+  methods: {
+    getRawMempool: function () {
+      BITBOX.Blockchain.getRawMempool(true).then( mempool => {
+        this.mempool = mempool;
+      });
+    }
+  },
+  mounted: function () {
+    this.getRawMempool()
   }
 }
+
 </script>
 
 <style>
