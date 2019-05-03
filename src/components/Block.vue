@@ -5,10 +5,6 @@
                 <span>Block</span>
                 145,674
             </li>
-            <li class="block-date">
-                <span>Created</span>
-                23 minutes ago
-            </li>
             <li class="block-transactions">
                 <span>Transactions</span>
                 105
@@ -20,6 +16,10 @@
             <li class="block-size">
                 <span>Size</span>
                 502KB
+            </li>
+            <li class="block-date">
+                <span>Created</span>
+                23 minutes ago
             </li>
         </ul>
     </section>
