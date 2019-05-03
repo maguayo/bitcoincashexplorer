@@ -1,8 +1,8 @@
 <template>
     <div id="app">
         <Header />
-        <div class="about">
-            <h1>This is an about page</h1>
+        <div class="statistics">
+            <h1>This is the statistics page</h1>
         </div>
     </div>
 </template>
@@ -23,7 +23,7 @@ let BITBOX = new BITBOXSDK();
 })()
 
 export default {
-  name: 'app',
+  name: 'Statistics',
   components: {
     Header,
   },

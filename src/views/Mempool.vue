@@ -1,18 +1,14 @@
 <template>
-  <div id="app">
-    <Header />
-    <div class="container">
-      <Block />
-      <Block />
-      <Block />
-      <Block />
+    <div id="app">
+        <Header />
+        <div class="mempool">
+            <h1>This is the mempool page</h1>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
 import Header from '../components/Header.vue'
-import Block from '../components/Block.vue'
 
 let BITBOXSDK = require('bitbox-sdk');
 let BITBOX = new BITBOXSDK();
@@ -27,10 +23,9 @@ let BITBOX = new BITBOXSDK();
 })()
 
 export default {
-  name: 'home',
+  name: 'Mempool',
   components: {
     Header,
-    Block
   },
   data() {
     return {

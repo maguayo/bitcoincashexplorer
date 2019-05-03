@@ -1,8 +1,9 @@
 <template>
   <nav>
     <ul>
-      <router-link to="/">Blocks</router-link> |
-      <router-link to="/about">About</router-link>
+      <li><router-link to="/">Blocks</router-link></li>
+      <li><router-link to="/mempool">Mempool</router-link></li>
+      <li><router-link to="/statistics">Statistics</router-link></li>
     </ul>
   </nav>
 </template>
