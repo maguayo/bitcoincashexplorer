@@ -1,9 +1,8 @@
 <template>
   <nav>
     <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">Blocks</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">Mempool</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">Statistics</a></li>
+      <router-link to="/">Blocks</router-link> |
+      <router-link to="/about">About</router-link>
     </ul>
   </nav>
 </template>
